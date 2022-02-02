@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Calculadora de propinas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <main class="container">
+
+    <img src="./assets/images/logo.svg" alt="page-logo" class=".title">
+    <!-- <h1 class="title">SPLI<br>TTER</h1> -->
+
+    <div class="div-principal">
+      <div class="div-calcular">
+        <h4 class="title-bill">Cuenta</h4>
+        <input type="text" class="bill-input" required>
+      
+        <h4 class="title-tip">Seleccione la propina %</h4>
+
+        <div class="div-calcular-botones">
+          <div class="botones-fila-1">
+            <button class="boton-5">5%</button>
+            <button class="boton-10">10%</button>
+            <button class="boton-15">15%</button>
+          </div>
+          <div class="botones-fila-2">
+            <button class="boton-25">25%</button>
+            <button class="boton-50">50%</button>
+            <input placeholder="Custom" type="text" class="boton-custom">
+          </div>
+        </div>  
+      
+        <h4 class="title-people">Cantidad de personas</h4>
+        <input type="text" class="people-input" required>
+      </div>
+
+      <div class="div-resultados">
+        <div class="div-amount">
+          <div class="div-tip">
+            <h4>Propina</h4>
+            <p>por persona</p>
+          </div>
+          <h1 class="dollar-sign">$</h1><h1 class="price-tip">0.00</h1>
+        </div>
+
+        <div class="div-total">
+          <div class="div-tip">
+            <h4>Total</h4>
+            <p>por persona</p>
+          </div>
+          <h1 class="dollar-sign">$</h1><h1 class="price-total">0.00</h1>
+        </div>
+
+        <button class="button-reset">REINICIAR</button>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
