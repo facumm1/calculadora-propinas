@@ -32,14 +32,22 @@ boton50.addEventListener("click", (e) => {
 });
 
 botonCustom.addEventListener("focus", () => {
-    inputCustom.placeholder = "";
+    inputCustom.placeholder = '';
 });
 
 botonCustom.addEventListener("blur", (e) => {
-    if(inputCustom.placeholder = ""){
-        inputCustom.placeholder = "Custom";
-    } else{
-        calculateValues(e, inputCustom.value);
+    if(inputBill.value == '' || inputPeople.value == ''){
+        alert("La cuenta o el número de personas esta sin especificar");
+        inputCustom.placeholder = 'Custom';
+    }
+    else{
+        if(inputCustom.value == ''){
+            alert("El porcentaje esta sin especificar");
+            inputCustom.placeholder = 'Custom';
+        }
+        else{
+            calculateValues(e, inputCustom.value/100);
+        }
     }
 });
 
@@ -48,28 +56,24 @@ buttonReset.addEventListener("click", () => {
     inputPeople.value = "";
     priceTip.innerHTML = '0.00';
     priceTotal.innerHTML = '0.00';
+    inputCustom.value = '';
+    inputCustom.placeholder = 'Custom';
 });
 
 function calculateValues(e, percent){
 /*     e.preventDefault(); */
-    let tip = inputBill.value*percent;
-    let finalPercent = tip/inputPeople.value;
-    let divideBill = inputBill.value/inputPeople.value;
- 
-    priceTip.innerHTML = finalPercent;
-    priceTotal.innerHTML = finalPercent+divideBill;
-}
 
-function Numeros(string){//Solo numeros
-    var out = '';
-    var filtro = '1234567890';//Caracteres validos
-	
-    //Recorrer el texto y verificar si el caracter se encuentra en la lista de validos 
-    for (var i=0; i<string.length; i++){
-       if (filtro.indexOf(string.charAt(i)) != -1) 
-             //Se añaden a la salida los caracteres validos
-	     out += string.charAt(i);
+    if(inputBill.value == '' || inputPeople.value == ''){
+        alert("La cuenta o el número de personas esta sin especificar"); 
     }
-    //Retornar valor filtrado
-    return out;
-} 
+    else{
+        let tip = inputBill.value*percent;
+        let finalPercent = tip/inputPeople.value;
+        let divideBill = inputBill.value/inputPeople.value;
+     
+        pricePerson = finalPercent+divideBill;
+    
+        priceTip.innerHTML = finalPercent.toFixed(2);
+        priceTotal.innerHTML = pricePerson.toFixed(2);
+    }
+}
