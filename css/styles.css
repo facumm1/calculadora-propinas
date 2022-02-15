@@ -215,3 +215,11 @@ body{
 .button-reset:active{
     background-color: hsl(184, 14%, 56%);
 }
+
+/* Responsive design */
+
+@media (max-width: 768px){
+    .div-principal{
+        flex-flow: column nowrap;
+    }
+}
